@@ -1,0 +1,75 @@
+This project demonstrates classification of the Iris flower dataset using various machine learning models: K-Nearest Neighbors (KNN), 
+Support Vector Machine (SVM), and Naive Bayes (GaussianNB). The project involves preprocessing, model evaluation using cross-validation,
+hyperparameter tuning with Grid Search, and performance analysis using classification metrics.
+
+📊 Dataset
+The classic Iris dataset from the UCI Machine Learning Repository is used. It contains 150 samples of iris flowers with 4 features:
+
+Sepal Length
+Sepal Width
+Petal Length
+Petal Width
+
+Target labels represent the flower species:
+
+Iris-setosa (0)
+Iris-versicolor (1)
+Iris-virginica (2)
+
+⚙️ Machine Learning Models
+1. K-Nearest Neighbors (KNN)
+
+Applied StandardScaler for feature normalization.
+Evaluated with 5-fold cross-validation.
+Tuned n_neighbors and metric using GridSearchCV.
+Achieved up to 96.67% accuracy.
+
+2. Support Vector Machine (SVM)
+
+Evaluated using StratifiedKFold and GridSearchCV.
+Tuned hyperparameters: C, kernel, and gamma.
+Best results with kernel = 'linear', C=10, achieving 97.33% accuracy.
+Visualized the confusion matrix and computed classification metrics: Precision, Recall, F1 Score, and Specificity.
+
+3. Naive Bayes (GaussianNB)
+
+Tuned var_smoothing using GridSearchCV with Stratified K-Fold.
+Achieved 94.67% cross-validation accuracy.
+Achieved 100% accuracy on the test set with and without K-Fold Cross Validation.
+
+📈 Evaluation Metrics
+
+Confusion Matrix
+Classification Report
+Accuracy
+Precision
+Recall (Sensitivity)
+Specificity
+F1 Score
+
+These metrics help assess the model's performance in a multiclass classification setting.
+
+🧪 Prediction Example
+
+The project includes prediction on new sample points with proper scaling and class mapping to actual Iris flower types.
+
+🔍 Tools & Libraries
+
+Python
+NumPy, Pandas
+Scikit-learn
+Matplotlib, Seaborn
+
+✅ Results Summary
+
+Model	Best Accuracy (CV)	Best Test Accuracy	Best Params
+KNN	96.67%	-	n_neighbors=5, metric='euclidean'
+SVM	97.33%	-	C=10, kernel='linear', gamma='scale'
+Naive Bayes	94.67%	100%	var_smoothing=1e-9
+
+📌 Conclusion
+This project showcases:
+The importance of feature scaling in distance-based algorithms.
+Effective use of K-Fold Cross Validation and Grid Search for model tuning.
+How different models perform on the same dataset with slight variations in accuracy and generalization.
+
